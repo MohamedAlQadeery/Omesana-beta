@@ -40,11 +40,6 @@ return [
             'visibility' => 'public',
         ],
 
-        'work' => [
-            'driver' => 'local',
-            'root' => storage_path('app/public/work'),
-        ],
-
         'tmp' => [
             'driver' => 'local',
             'root' => public_path('images/tmp'),

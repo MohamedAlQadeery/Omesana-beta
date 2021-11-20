@@ -79,8 +79,7 @@
                             </div>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link"
-                                href="/metronic8/demo6/../demo6/rtl/apps/customers/getting-started.html">
+                            <a class="menu-link" href="{{ route('dashboard.works.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>

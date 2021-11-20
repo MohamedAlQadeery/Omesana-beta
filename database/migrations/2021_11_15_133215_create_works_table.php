@@ -15,7 +15,7 @@ class CreateWorksTable extends Migration
     {
         Schema::create('works', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
+            $table->string('name');
             $table->string('slug')->unique();
             $table->text('description')->nullable();
             $table->string('client_name')->nullable();
@@ -24,6 +24,7 @@ class CreateWorksTable extends Migration
             $table->float('size');
             $table->smallInteger('type')->nullable(); // 1 interior 2 external
             $table->string('tmp_folder');
+            $table->smallInteger('status')->default(1); //1 active 2 disabled
             $table->timestamps();
         });
     }

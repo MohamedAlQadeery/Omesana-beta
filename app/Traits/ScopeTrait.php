@@ -1,0 +1,37 @@
+<?php
+
+namespace App\Traits;
+
+trait ScopeTrait
+{
+    //scopes --------------------------------------
+    public function scopeWhenSearch($query, $search)
+    {
+        return $query->when($search, function ($q) use ($search) {
+            return $q->where('name', 'like', "%$search%");
+        });
+    }
+
+    // status 1 active 2 disabled
+    public function scopeWhenStatus($query, $status)
+    {
+        return $query->when($status, function ($q) use ($status) {
+            return $q->where('status', $status);
+        });
+    }
+
+    //1 interior 2 exterior
+    public function scopeWhenType($query, $type)
+    {
+        return $query->when($type, function ($q) use ($type) {
+            return $q->where('type', $type);
+        });
+    }
+
+    public function scopeWhenAddress($query, $address)
+    {
+        return $query->when($address, function ($q) use ($address) {
+            return $q->where('address', $address);
+        });
+    }
+}

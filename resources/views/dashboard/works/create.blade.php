@@ -11,6 +11,15 @@
 @section('content')
 
 
+
+    <ol class="breadcrumb text-muted fs-6 fw-bold">
+        <li class="breadcrumb-item pe-3"><a href="#" class="pe-3">الرئيسية</a></li>
+        <li class="breadcrumb-item pe-3"><a href="#" class="pe-3">أعمال الموقع</a></li>
+        <li class="px-3 breadcrumb-item text-muted">اضافة عمل</li>
+    </ol><br>
+
+
+
     <div class="shadow-sm card">
         <div class="card-header">
             <h3 class="card-title">بيانات العمل</h3>
@@ -48,7 +57,7 @@
                         <label class="mb-2 required fs-6 fw-bold"><strong>اسم العمل</strong></label>
                         <!--end::Label-->
                         <!--begin::Input-->
-                        <input class="form-control form-control-solid" type="text" placeholder="" name="title" />
+                        <input class="form-control form-control-solid" type="text" placeholder="" name="name" />
                         <!--end::Input-->
                     </div>
                     <!--end::Col-->
@@ -100,7 +109,7 @@
 
                         <label class="mb-2 required fs-6 fw-bold"><strong>الوصف</strong></label>
 
-                        <textarea class="form-control form-control form-control-solid" data-kt-autosize="true"
+                        <textarea class="form-control form-control-solid" data-kt-autosize="true"
                             name="description"></textarea>
 
                     </div>

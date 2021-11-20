@@ -13,6 +13,21 @@ class WorkController extends Controller
 {
     use FileUploadTrait;
 
+    public function index()
+    {
+        $works = Work::whenSearch(request()->search)
+        ->whenStatus(request()->status)
+        ->whenType(request()->type)
+        ->whenAddress(request()->address)
+        ->latest()
+        ->paginate(10);
+
+        //to make reset button in blade
+        $is_searched = request()->search || request()->status || request()->type || request()->address;
+
+        return view('dashboard.works.index')->with(['works' => $works, 'is_searched' => $is_searched]);
+    }
+
     public function create()
     {
         $tmp_folder = 'work-'.now()->timestamp;
@@ -31,7 +46,7 @@ class WorkController extends Controller
     public function store(Request $request)
     {
         $data = $request->except(['files', '_token']);
-        $data['slug'] = Str::of($data['title'])->slug('-');
+        $data['slug'] = Str::of($data['name'])->slug('-');
         $work = Work::create($data);
 
         $files = Storage::disk('tmp')->allFiles($work->tmp_folder);
@@ -39,6 +54,11 @@ class WorkController extends Controller
             $this->fileUpload($work, $file, 'work');
         }
 
-        dd('success');
+        return redirect()->route('dashboard.works.index')->with('success', 'success');
+    }
+
+    public function show(Work $work)
+    {
+        return view('dashboard.works.show')->with(['work' => $work]);
     }
 }

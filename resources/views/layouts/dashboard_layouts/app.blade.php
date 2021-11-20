@@ -9,12 +9,12 @@
 <!--end::Head-->
 <!--begin::Body-->
 
-<body id="kt_body" class=" header-fixed header-tablet-and-mobile-fixed aside-enabled aside-fixed ">
+<body id="kt_body" class=" header-fixed header-tablet-and-mobile-fixed aside-enabled aside-fixed">
     <!--begin::Main-->
     <!--begin::Root-->
     <div class="d-flex flex-column flex-root">
         <!--begin::Page-->
-        <div class="page d-flex flex-row flex-column-fluid">
+        <div class="flex-row page d-flex flex-column-fluid">
             <!--begin::Aside-->
             @include('layouts.dashboard_layouts._aside')
             <!--end::Aside-->
@@ -64,6 +64,8 @@
     <!--end::Scrolltop-->
     <!--end::Main-->
     @include('layouts.dashboard_layouts._footer_meta')
+    @include('dashboard.partials._sessions')
+
     <!--end::Page Custom Javascript-->
     <!--end::Javascript-->
 </body>
