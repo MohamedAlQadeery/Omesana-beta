@@ -16,9 +16,8 @@
         <li class="breadcrumb-item pe-3"><a href="#" class="pe-3">الرئيسية</a></li>
         <li class="breadcrumb-item pe-3"><a href="{{ route('dashboard.works.index') }}" class="pe-3">أعمال
                 الموقع</a></li>
-        <li class="px-3 breadcrumb-item text-muted">اضافة عمل</li>
+        <li class="px-3 breadcrumb-item text-muted">تعديل عمل</li>
     </ol><br>
-
 
     @include('dashboard.partials._errors')
 
@@ -27,10 +26,13 @@
             <h3 class="card-title">بيانات العمل</h3>
 
         </div>
-        <form method="post" action="{{ route('dashboard.works.store') }}" enctype="multipart/form-data">
+
+
+        <form method="post" action="{{ route('dashboard.works.update', $work) }}">
+            @csrf
+            @method('PUT')
             <div class="card-body">
-                @csrf
-                <input type="hidden" name="tmp_folder" value="{{ $tmp_folder }}">
+                <input type="hidden" name="tmp_folder" value="{{ $work->tmp_folder }}">
                 <!--end::Input group-->
                 <!--begin::Input group-->
                 <div class="row g-9 mb-7">
@@ -43,10 +45,10 @@
                         </label>
                         <!--end::Label-->
                         <!--begin::Input-->
-                        <select name="type" data-placeholder="اختر نوع العمل .."
+                        <select name="type" name="type" data-placeholder="اختر نوع العمل .."
                             class="form-select form-select-solid fw-bolder">
-                            <option value="1">تصميم داخلي</option>
-                            <option value="2">تصميم معماري</option>
+                            <option value="1" {{ $work->type == 1 ? 'selected' : '' }}>تصميم داخلي</option>
+                            <option value="2" {{ $work->type == 2 ? 'selected' : '' }}>تصميم معماري</option>
 
                         </select>
                         <!--end::Input-->
@@ -58,7 +60,7 @@
                         <label class="mb-2 required fs-6 fw-bold"><strong>اسم العمل</strong></label>
                         <!--end::Label-->
                         <!--begin::Input-->
-                        <input class="form-control form-control-solid" type="text" value="{{ old('name') }}"
+                        <input class="form-control form-control-solid" type="text" value="{{ $work->name }}"
                             name="name" />
                         <!--end::Input-->
                     </div>
@@ -70,7 +72,7 @@
                         <label class="mb-2 required fs-6 fw-bold"><strong>اسم العميل</strong></label>
                         <!--end::Label-->
                         <!--begin::Input-->
-                        <input class="form-control form-control-solid" type="text" value="{{ old('client_name') }}"
+                        <input class="form-control form-control-solid" type="text" value="{{ $work->client_name }}"
                             name="client_name" />
                         <!--end::Input-->
                     </div>
@@ -81,7 +83,7 @@
                         <label class="mb-2 required fs-6 fw-bold"><strong>اسم المهندس/ة</strong></label>
                         <!--end::Label-->
                         <!--begin::Input-->
-                        <input class="form-control form-control-solid" type="text" value="{{ old('arc_name') }}"
+                        <input class="form-control form-control-solid" type="text" value="{{ $work->arc_name }}"
                             name="arc_name" />
                         <!--end::Input-->
                     </div>
@@ -93,7 +95,7 @@
                         <label class="mb-2 required fs-6 fw-bold"><strong>موقع العمل</strong></label>
                         <!--end::Label-->
                         <!--begin::Input-->
-                        <input class="form-control form-control-solid" type="text" value="{{ old('address') }}"
+                        <input class="form-control form-control-solid" type="text" value="{{ $work->address }}"
                             name="address" />
                         <!--end::Input-->
                     </div>
@@ -104,28 +106,43 @@
                         <label class="mb-2 required fs-6 fw-bold"><strong>المساحة (متر مربع)</strong></label>
                         <!--end::Label-->
                         <!--begin::Input-->
-                        <input class="form-control form-control-solid" type="text" value="{{ old('size') }}"
-                            name="size" />
+                        <input class="form-control form-control-solid" type="text" name="size"
+                            value="{{ $work->size }}" />
                         <!--end::Input-->
                     </div>
 
+                    <div class="col-md-6 fv-row">
+                        <label class="mb-2 fs-6 fw-bold">
+                            <span class="required"><strong>الحالة</strong></span>
+                            <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
+                                title="اختار الحالة"></i>
+                        </label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <select name="status" data-placeholder="اختر الحالة  .."
+                            class="form-select form-select-solid fw-bolder">
+                            <option value="1" {{ $work->status == 1 ? 'selected' : '' }}>نشط</option>
+                            <option value="2" {{ $work->status == 2 ? 'selected' : '' }}>غير نشط</option>
 
+                        </select>
+                        <!--end::Input-->
+                    </div>
 
                     <div class="col-md-12 fv-row">
 
                         <label class="mb-2 required fs-6 fw-bold"><strong>الوصف</strong></label>
 
                         <textarea class="form-control form-control-solid" data-kt-autosize="true"
-                            name="description">{{ old('description') }}</textarea>
+                            name="description">{{ $work->description }}</textarea>
 
                     </div>
 
 
                     <div class="col-md-12 fv-row">
 
-                        <label class="mb-2 required fs-6 fw-bold"><strong>ملفات العمل</strong></label>
-
-                        <input type="file" name="files[]" multiple required>
+                        <label class="mb-2 required fs-6 fw-bold"><strong>ملفات العمل</strong></label><br>
+                        <span class="text-muted text-small">لاضافة المزيد من الصور </span><br>
+                        <input id="files" type="file" name="files[]" multiple>
 
 
                     </div>
@@ -142,8 +159,8 @@
             <div class="py-6 card-footer d-flex justify-content-end px-9">
                 <button type="reset" id="cancel-opeartion"
                     class="btn btn-light btn-active-light-primary me-2">الغاء</button>
-                <button type="submit" class="btn btn-primary" id="sub_btn" style="display: none">
-                    اضافة</button>
+                <button type="submit" class="btn btn-primary" id="sub_btn">
+                    تحديث</button>
             </div>
         </form>
     </div>
@@ -173,11 +190,10 @@
             $('#sub_btn').css('display', 'block');
 
         }
-
         FilePond.setOptions({
             acceptedFileTypes: ['image/*'],
             server: {
-                process: "{{ route('dashboard.file_upload_multi', $tmp_folder) }}",
+                process: "{{ route('dashboard.file_upload_multi', $work->tmp_folder) }}",
 
 
 
@@ -186,6 +202,13 @@
                 }
 
             }
+        });
+
+        $('#files').change(function(e) {
+
+            $('#sub_btn').css('display', 'none');
+
+
         });
     </script>
 

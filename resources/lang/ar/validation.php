@@ -172,7 +172,7 @@ return [
         'date' => 'التاريخ',
         'time' => 'الوقت',
         'available' => 'مُتاح',
-        'size' => 'الحجم',
+        'size' => 'المساحة',
         'second_name' => 'الاسم الاب',
         'third_name' => 'الاسم الجد',
         'shop_name' => 'اسم المحل',
@@ -198,5 +198,7 @@ return [
     'commission_value' => 'عموله الموقع',
     'options' => 'الخيارات',
     'options.*' => 'الخيارات',
+    'client_name' => 'اسم العميل',
+    'arc_name' => 'اسم المهندس/ة',
     ],
 ];

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\WorkRequest;
 use App\Models\Work;
 use App\Traits\FileUploadTrait;
 use Illuminate\Http\Request;
@@ -43,7 +44,7 @@ class WorkController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(WorkRequest $request)
     {
         $data = $request->except(['files', '_token']);
         $data['slug'] = Str::of($data['name'])->slug('-');
@@ -60,5 +61,24 @@ class WorkController extends Controller
     public function show(Work $work)
     {
         return view('dashboard.works.show')->with(['work' => $work]);
+    }
+
+    public function edit(Work $work)
+    {
+        return view('dashboard.works.edit')->with(['work' => $work]);
+    }
+
+    public function update(WorkRequest $request, Work $work)
+    {
+        $data = $request->except(['_method', '_token', 'files']);
+        if ($request->input('files')[0] != null) {
+            $files = Storage::disk('tmp')->allFiles($work->tmp_folder);
+            foreach ($files as $file) {
+                $this->fileUpload($work, $file, 'work');
+            }
+        }
+        $work->update($data);
+
+        return redirect()->route('dashboard.works.index')->with('success_edit', 'success_edit');
     }
 }

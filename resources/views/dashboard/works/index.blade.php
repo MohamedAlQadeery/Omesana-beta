@@ -104,7 +104,7 @@
                     <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">البحث</button>
                     @if ($is_searched)
                         <a href="{{ route('dashboard.works.index') }}" class="btn btn-light btn-danger "
-                            style="margin-right: 2px"><i class=" fas fa-arrow-right "></i>الغاء</a>
+                            style="margin-right: 2px"><i class=" fas fa-arrow-right"></i>الغاء</a>
 
                     @endif
                 </div>
@@ -123,6 +123,7 @@
             <!--begin::Title-->
             <div class="card-title">
                 <h3 class="m-0 fw-bolder">أعمال الموقع</h3>
+
             </div>
             <!--end::Title-->
 
@@ -159,7 +160,7 @@
                                     <tr>
                                         <td>{{ ++$index }}</td>
                                         <td>
-                                            <a href="#">{{ $work->name }}</a>
+                                            {{ $work->name }}
                                         </td>
                                         <td>
                                             <span
@@ -180,6 +181,9 @@
                                         <td class="text-right">
                                             <a href="{{ route('dashboard.works.show', $work) }}"
                                                 class="btn btn-bg-secondary">عرض</a>
+
+                                            <a href="{{ route('dashboard.works.edit', $work) }}"
+                                                class="btn btn-bg-primary">تعديل</a>
                                         </td>
                                     </tr>
                                 @endforeach

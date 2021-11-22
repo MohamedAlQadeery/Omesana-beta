@@ -16,29 +16,29 @@
 
     <div class="d-flex flex-column flex-xl-row">
         <!--begin::Sidebar-->
-        <div class="flex-column flex-lg-row-auto w-100 w-xl-350px mb-10">
+        <div class="mb-10 flex-column flex-lg-row-auto w-100 w-xl-350px">
             <!--begin::Card-->
-            <div class="card mb-5 mb-xl-8">
+            <div class="mb-5 card mb-xl-8">
                 <!--begin::Card body-->
                 <div class="card-body pt-15">
                     <!--begin::Summary-->
-                    <div class="d-flex flex-center flex-column mb-5">
+                    <div class="mb-5 d-flex flex-center flex-column">
                         <!--begin::Avatar-->
                         <div class="symbol symbol-150px symbol-2by3 mb-7">
                             <img src="{{ $work->getFirstMediaUrl() }}" alt="image" />
                         </div>
                         <!--end::Avatar-->
                         <!--begin::Name-->
-                        <a href="#" class="fs-3 text-gray-800 text-hover-primary fw-bolder mb-1">{{ $work->name }}</a>
+                        <a href="#" class="mb-1 text-gray-800 fs-3 text-hover-primary fw-bolder">{{ $work->name }}</a>
                         <!--end::Name-->
                         <!--begin::Position-->
-                        {{-- <div class="fs-5 fw-bold text-muted mb-6">Software Enginer</div> --}}
+                        {{-- <div class="mb-6 fs-5 fw-bold text-muted">Software Enginer</div> --}}
                         <!--end::Position-->
                         <!--begin::Info-->
-                        <div class="d-flex flex-wrap flex-center">
+                        <div class="flex-wrap d-flex flex-center">
                             <!--begin::Stats-->
-                            <div class="border border-gray-300 border-dashed rounded py-3 px-3 mb-3">
-                                <div class="fs-4 fw-bolder text-gray-700">
+                            <div class="px-3 py-3 mb-3 border border-gray-300 border-dashed rounded">
+                                <div class="text-gray-700 fs-4 fw-bolder">
                                     <span class="w-75px">6,900</span>
                                     <!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
                                     <span class="svg-icon svg-icon-3 svg-icon-success">
@@ -62,10 +62,10 @@
                     </div>
                     <!--end::Summary-->
                     <!--begin::Details toggle-->
-                    <div class="d-flex flex-stack fs-4 py-3">
+                    <div class="py-3 d-flex flex-stack fs-4">
                         <div class="fw-bolder rotate collapsible" data-bs-toggle="collapse" href="#kt_customer_view_details"
                             role="button" aria-expanded="false" aria-controls="kt_customer_view_details">التفاصيل
-                            <span class="ms-2 rotate-180">
+                            <span class="rotate-180 ms-2">
                                 <!--begin::Svg Icon | path: icons/duotune/arrows/arr072.svg-->
                                 <span class="svg-icon svg-icon-3">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -81,38 +81,38 @@
 
                     </div>
                     <!--end::Details toggle-->
-                    <div class="separator separator-dashed my-3"></div>
+                    <div class="my-3 separator separator-dashed"></div>
                     <!--begin::Details content-->
                     <div id="kt_customer_view_details" class="collapse show">
                         <div class="py-5 fs-6">
 
                             <!--begin::Details item-->
-                            <div class="fw-bolder mt-5">اسم المهندس/ة</div>
+                            <div class="mt-5 fw-bolder">اسم المهندس/ة</div>
                             <div class="text-gray-600">{{ $work->arc_name }}</div>
                             <!--begin::Details item-->
                             <!--begin::Details item-->
-                            <div class="fw-bolder mt-5">اسم العميل</div>
+                            <div class="mt-5 fw-bolder">اسم العميل</div>
                             <div class="text-gray-600">
                                 <a href="#" class="text-gray-600 text-hover-primary">{{ $work->client_name }}</a>
                             </div>
                             <!--begin::Details item-->
                             <!--begin::Details item-->
-                            <div class="fw-bolder mt-5">نوع العمل</div>
+                            <div class="mt-5 fw-bolder">نوع العمل</div>
                             <div class="text-gray-600">
                                 <span
                                     class="text-{{ $work->type == 1 ? 'info' : 'warning' }}">{{ $work->type_name }}</span>
                             </div>
                             <!--begin::Details item-->
                             <!--begin::Details item-->
-                            <div class="fw-bolder mt-5">موقع العمل</div>
+                            <div class="mt-5 fw-bolder">موقع العمل</div>
                             <div class="text-gray-600">{{ $work->address }}</div>
                             <!--begin::Details item-->
                             <!--begin::Details item-->
-                            <div class="fw-bolder mt-5">مساحة العمل</div>
+                            <div class="mt-5 fw-bolder">مساحة العمل</div>
                             <div class="text-gray-600">{{ $work->size }} متر مربع</div>
                             <!--begin::Details item-->
                             <!--begin::Details item-->
-                            <div class="fw-bolder mt-5">حالة العمل</div>
+                            <div class="mt-5 fw-bolder">حالة العمل</div>
                             <div class="text-gray-600">
                                 <span
                                     class="text-{{ $work->status == 1 ? 'success' : 'danger' }}">{{ $work->status_name }}</span>
@@ -136,24 +136,24 @@
                 <!--begin:::Tab pane-->
                 <div class="tab-pane active" id="kt_customer_view_overview_statements" role="tabpanel">
                     <!--begin::Earnings-->
-                    <div class="card mb-6 mb-xl-9">
+                    <div class="mb-6 card mb-xl-9">
                         <!--begin::Header-->
-                        <div class="card-header border-0">
+                        <div class="border-0 card-header">
                             <div class="card-title">
                                 <h2>الوصف</h2>
                             </div>
                         </div>
                         <!--end::Header-->
                         <!--begin::Body-->
-                        <div class="card-body py-0">
-                            <div class="fs-5 fw-bold text-gray-500 mb-4">{{ $work->description }}</div>
+                        <div class="py-0 card-body">
+                            <div class="mb-4 text-gray-500 fs-5 fw-bold">{{ $work->description }}</div>
 
                         </div>
                         <!--end::Body-->
                     </div>
                     <!--end::Earnings-->
                     <!--begin::Statements-->
-                    <div class="card mb-6 mb-xl-9">
+                    <div class="mb-6 card mb-xl-9">
                         <!--begin::Header-->
                         <div class="card-header">
                             <!--begin::Title-->
@@ -165,7 +165,7 @@
                         </div>
                         <!--end::Header-->
                         <!--begin::Card body-->
-                        <div class="card-body pb-5">
+                        <div class="pb-5 card-body">
                             <!--begin::Tab Content-->
 
 
@@ -175,7 +175,7 @@
                                     @foreach ($work->getMedia() as $media)
 
                                         <div class="col">
-                                            <div class="card shadow-sm">
+                                            <div class="shadow-sm card">
 
 
                                                 <!--begin::Overlay-->
@@ -188,8 +188,8 @@
                                                     <!--end::Image-->
 
                                                     <!--begin::Action-->
-                                                    <div class="overlay-layer card-rounded bg-dark bg-opacity-25 shadow">
-                                                        <i class="bi bi-eye-fill text-white fs-3x"></i>
+                                                    <div class="bg-opacity-25 shadow overlay-layer card-rounded bg-dark">
+                                                        <i class="text-white bi bi-eye-fill fs-3x"></i>
                                                     </div>
                                                     <!--end::Action-->
 
@@ -198,19 +198,25 @@
                                                 <div class="card-body">
 
                                                     <div class="text-center">
-                                                        <div class="btn-group">
-                                                            <form method="post"
-                                                                action="{{ route('dashboard.media_delete', $media) }}"
-                                                                style="display: inline-block;">
-                                                                @csrf
-                                                                @method('delete')
-                                                                <button type="submit"
-                                                                    class="btn btn-danger btn-sm delete"><i
-                                                                        class="fa fa-trash"></i>حذف</button>
-                                                            </form><!-- end of form -->
+
+                                                        @if ($work->getMedia()->count() > 1)
+                                                            <div class="btn-group">
+                                                                <form method="post"
+                                                                    action="{{ route('dashboard.media_delete', $media) }}"
+                                                                    style="display: inline-block;">
+                                                                    @csrf
+                                                                    @method('delete')
+                                                                    <button type="submit"
+                                                                        class="btn btn-danger btn-sm delete"><i
+                                                                            class="fa fa-trash"></i>حذف</button>
+                                                                </form><!-- end of form -->
 
 
-                                                        </div>
+                                                            </div>
+                                                        @else
+                                                            <a href="#" class="btn btn-danger btn-sm disabled "><i
+                                                                    class="fa fa-trash"></i>حذف</a>
+                                                        @endif
 
                                                     </div>
                                                 </div>
@@ -250,35 +256,5 @@
     {{-- End page level js --}}
 
 
-    <script>
-        $(document).ready(function() {
 
-            $(document).on('click', '.delete', function(e) {
-
-                e.preventDefault();
-                var that = $(this);
-                Swal.fire({
-                    html: "هل أنت متأكد من حذف الصورة ؟",
-                    icon: "error",
-                    buttonsStyling: false,
-                    showCancelButton: true,
-                    confirmButtonText: "نعم,متأكد",
-                    cancelButtonText: 'لا',
-                    customClass: {
-                        confirmButton: "btn btn-primary",
-                        cancelButton: 'btn btn-danger'
-                    }
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        that.closest('form').submit()
-
-                    }
-                });
-
-            })
-
-
-
-        });
-    </script>
 @endpush
