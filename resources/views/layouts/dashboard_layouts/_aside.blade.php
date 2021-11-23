@@ -21,7 +21,7 @@
             <div class=" menu menu-column menu-title-gray-700 menu-state-title-primary menu-state-icon-primary menu-state-bullet-primary menu-arrow-gray-500 fw-bold"
                 id="#kt_aside_menu" data-kt-menu="true">
                 <div class="py-2 menu-item">
-                    <a class="menu-link menu-center" href="../../demo6/dist/index.html" data-bs-trigger="hover"
+                    <a class="menu-link menu-center" href="{{ route('dashboard.') }}" data-bs-trigger="hover"
                         data-bs-dismiss="click" data-bs-placement="right">
                         <span class="menu-icon me-0">
                             <i class="bi bi-house fs-2"></i>
@@ -29,41 +29,6 @@
                         <span class="menu-title">الرئيسية</span>
                     </a>
                 </div>
-                <div data-kt-menu-trigger="click" data-kt-menu-placement="left-start" class="py-2 menu-item">
-                    <span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click"
-                        data-bs-placement="right">
-                        <span class="menu-icon me-0">
-                            <i class="bi bi-people fs-2"></i>
-                        </span>
-                        <span class="menu-title">المتطلبات</span>
-                    </span>
-                    <div class="px-1 py-4 menu-sub menu-sub-dropdown w-225px">
-                        <div class="menu-item">
-                            <div class="menu-content">
-                                <span class="py-1 menu-section fs-5 fw-bolder ps-1">المتطلبات</span>
-                            </div>
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link"
-                                href="/metronic8/demo6/../demo6/rtl/apps/customers/getting-started.html">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">قائمة المتطلبات</span>
-                            </a>
-                        </div>
-                        <div class="menu-item">
-                            <a class="menu-link" href="{{ route('dashboard.requirement.create') }}">
-                                <span class="menu-bullet">
-                                    <span class="bullet bullet-dot"></span>
-                                </span>
-                                <span class="menu-title">اضافة متطلب</span>
-                            </a>
-                        </div>
-
-                    </div>
-                </div>
-
                 <div data-kt-menu-trigger="click" data-kt-menu-placement="left-start" class="py-2 menu-item">
                     <span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click"
                         data-bs-placement="right">
@@ -97,6 +62,42 @@
 
                     </div>
                 </div>
+
+                <div data-kt-menu-trigger="click" data-kt-menu-placement="left-start" class="py-2 menu-item">
+                    <span class="menu-link menu-center" data-bs-trigger="hover" data-bs-dismiss="click"
+                        data-bs-placement="right">
+                        <span class="menu-icon me-0">
+                            <i class="bi bi-people fs-2"></i>
+                        </span>
+                        <span class="menu-title">المتطلبات</span>
+                    </span>
+                    <div class="px-1 py-4 menu-sub menu-sub-dropdown w-225px">
+                        <div class="menu-item">
+                            <div class="menu-content">
+                                <span class="py-1 menu-section fs-5 fw-bolder ps-1">المتطلبات</span>
+                            </div>
+                        </div>
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{ route('dashboard.requirements.index') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">قائمة المتطلبات</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a class="menu-link" href="{{ route('dashboard.requirements.create') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">اضافة متطلب</span>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+
 
 
 

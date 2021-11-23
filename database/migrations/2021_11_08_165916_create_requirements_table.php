@@ -17,6 +17,7 @@ class CreateRequirementsTable extends Migration
             $table->id();
             $table->string('name');
             $table->smallInteger('type'); //1 interoir desgin ,, 2 external desgin
+            $table->smallInteger('status')->default(1); //1 active , 2 disabled
             $table->timestamps();
         });
     }

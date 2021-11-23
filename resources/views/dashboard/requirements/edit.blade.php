@@ -3,13 +3,14 @@
 @section('content')
     @include('dashboard.partials._errors')
 
-    <div class="shadow-sm card">
+    <div class="mb-5 card mb-xl-10">
         <div class="card-header">
             <h3 class="card-title">اضافة متطلب</h3>
 
         </div>
-        <form method="post" action="{{ route('dashboard.requirements.store') }}">
+        <form method="post" action="{{ route('dashboard.requirements.update', $requirement) }}">
             @csrf
+            @method('PATCH')
             <div class="card-body">
                 <!--end::Input group-->
                 <!--begin::Input group-->
@@ -25,29 +26,50 @@
                         <!--begin::Input-->
                         <select name="type" data-placeholder="اختر نوع المتطلب .."
                             class="form-select form-select-solid fw-bolder">
-                            <option value="1" {{ old('type') == 1 ? 'selected' : '' }}>تصميم داخلي</option>
-                            <option value="2" {{ old('type') == 2 ? 'selected' : '' }}>تصميم معماري</option>
+                            <option value="1" {{ old('type', $requirement->type) == 1 ? 'selected' : '' }}>تصميم داخلي
+                            </option>
+                            <option value="2" {{ old('type', $requirement->type) == 2 ? 'selected' : '' }}>تصميم معماري
+                            </option>
 
                         </select>
                         <!--end::Input-->
                     </div>
                     <!--end::Col-->
-                    <!--begin::Col-->
+
                     <div class="col-md-6 fv-row">
+                        <label class="mb-2 fs-6 fw-bold">
+                            <span class="required"><strong>حالة المتطلب</strong></span>
+                            <i class="fas fa-exclamation-circle ms-1 fs-7" data-bs-toggle="tooltip"
+                                title="اختار حالة المتطلب "></i>
+                        </label>
+                        <!--end::Label-->
+                        <!--begin::Input-->
+                        <select name="status" data-placeholder="اختر حالة المتطلب .."
+                            class="form-select form-select-solid fw-bolder">
+                            <option value="1" {{ old('type', $requirement->status) == 1 ? 'selected' : '' }}>نشط
+                            </option>
+                            <option value="2" {{ old('type', $requirement->status) == 2 ? 'selected' : '' }}>غير نشط
+                            </option>
+
+                        </select>
+                        <!--end::Input-->
+                    </div>
+
+                    <!--begin::Col-->
+                    <div class="col-md-12 fv-row">
                         <!--begin::Label-->
                         <label class="mb-2 required fs-6 fw-bold"><strong>الاسم</strong></label>
                         <!--end::Label-->
                         <!--begin::Input-->
-                        <input class="form-control form-control-solid" value="{{ old('name') }}" type="text"
-                            name="name" />
+                        <input class="form-control form-control-solid" type="text"
+                            value="{{ old('name', $requirement->name) }}" name="name" />
                         <!--end::Input-->
                     </div>
                     <!--end::Col-->
 
-
                     <!--begin::Repeater-->
+
                     <div id="kt_docs_repeater_basic">
-                        <!--begin::Form group-->
                         <div class="form-group">
                             <div data-repeater-list="options">
                                 <div data-repeater-item class="form-group row">
@@ -76,12 +98,7 @@
                         <!--end::Form group-->
                     </div>
                     <!--end::Repeater-->
-
                 </div>
-
-
-
-
 
 
 
@@ -94,12 +111,50 @@
                 <button type="reset" id="cancel-opeartion"
                     class="btn btn-light btn-active-light-primary me-2">الغاء</button>
                 <button type="submit" class="btn btn-primary" id="kt_account_profile_details_submit">
-                    اضافة</button>
+                    تحديث</button>
             </div>
 
         </form>
     </div>
 
+    <div class="shadow-sm card">
+
+        <div class="card-header">
+            <h3 class="card-title">الخيارات</h3>
+
+        </div>
+
+        <div class="card-body">
+
+            <!--begin::Form group-->
+            <h1>الخيارات</h1>
+            @foreach ($requirement->options as $option)
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <!--begin::Input-->
+                        <input class="form-control form-control-solid disabled " type="text" value="{{ $option->name }}"
+                            name="name" disabled />
+                        <!--end::Input-->
+                    </div>
+
+                    <div class="col-md-2">
+                        <form action="{{ route('dashboard.options.destroy', $option) }}" method="post">
+                            @csrf
+                            @method('delete')
+                            <button type="submit" class="btn  btn-danger delete ">
+                                <i class="la la-trash-o"></i>حذف الخيار
+                            </button>
+                        </form>
+                    </div>
+
+
+                </div>
+                <br>
+            @endforeach
+
+        </div>
+    </div>
 
 @endsection
 
@@ -112,7 +167,7 @@
 
     <script>
         $('#kt_docs_repeater_basic').repeater({
-            initEmpty: false,
+            initEmpty: true,
 
             defaultValues: {
                 'text-input': 'foo'
@@ -127,6 +182,7 @@
             }
         });
     </script>
+
 
 
     <script>

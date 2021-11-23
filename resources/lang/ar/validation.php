@@ -200,5 +200,7 @@ return [
     'options.*' => 'الخيارات',
     'client_name' => 'اسم العميل',
     'arc_name' => 'اسم المهندس/ة',
+
+    'options.*.option_name' => 'اسم الخيار',
     ],
 ];

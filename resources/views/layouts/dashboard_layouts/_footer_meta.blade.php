@@ -45,29 +45,7 @@
 
 
 
-        //for cancel button
-        const button = document.getElementById('cancel-opeartion');
 
-        button.addEventListener('click', e => {
-            e.preventDefault();
-
-            Swal.fire({
-                html: "هل أنت متأكد من الغاء العملية ؟",
-                icon: "info",
-                buttonsStyling: false,
-                showCancelButton: true,
-                confirmButtonText: "نعم,متأكد",
-                cancelButtonText: 'لا',
-                customClass: {
-                    confirmButton: "btn btn-primary",
-                    cancelButton: 'btn btn-danger'
-                }
-            }).then((result) => {
-                if (result.isConfirmed) {
-                    window.location.href = "{{ route('dashboard.works.index') }}";
-                }
-            });
-        });
 
 
     });

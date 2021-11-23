@@ -3,6 +3,9 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\RequirementRequest;
+use App\Models\Option;
+use App\Models\Requirement;
 use Illuminate\Http\Request;
 
 class RequirementController extends Controller
@@ -14,6 +17,16 @@ class RequirementController extends Controller
      */
     public function index()
     {
+        $reqs = Requirement::whenSearch(request()->search)
+        ->whenStatus(request()->status)
+        ->whenType(request()->type)
+        ->latest()
+         ->paginate(6);
+
+        //to make reset button in blade
+        $is_searched = request()->search || request()->status || request()->type;
+
+        return view('dashboard.requirements.index')->with(['reqs' => $reqs, 'is_searched' => $is_searched]);
     }
 
     /**
@@ -31,8 +44,18 @@ class RequirementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RequirementRequest $request)
     {
+        $data = $request->except('options');
+        $req = Requirement::create($data);
+        foreach ($request->options as $option) {
+            Option::create([
+                'name' => $option['option_name'],
+                'requirement_id' => $req->id,
+             ]);
+        }
+
+        return redirect()->route('dashboard.requirements.index')->with('success', 'success');
     }
 
     /**
@@ -49,33 +72,43 @@ class RequirementController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param int $id
-     *
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Requirement $requirement)
     {
+        return view('dashboard.requirements.edit')->with(['requirement' => $requirement]);
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param int $id
-     *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(RequirementRequest $request, Requirement $requirement)
     {
+        $data = $request->except(['options']);
+        if ($request->has('options')) {
+            foreach ($request->options as $option) {
+                Option::create([
+                'name' => $option['option_name'],
+                'requirement_id' => $requirement->id,
+             ]);
+            }
+        }
+        $requirement->update($data);
+
+        return redirect()->route('dashboard.requirements.index')->with('success_edit', 'success_edit');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param int $id
-     *
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Requirement $requirement)
     {
+        $requirement->delete();
+
+        return redirect()->route('dashboard.requirements.index')->with('success_delete', 'success_delete');
     }
 }

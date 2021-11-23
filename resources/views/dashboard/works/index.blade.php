@@ -68,6 +68,8 @@
                             <!--begin::Input-->
                             <select name="type" data-placeholder="اختر نوع العمل .."
                                 class="form-select form-select-solid fw-bolder">
+                                <option value="">اختار نوع العمل </option>
+
                                 <option value="1" {{ request()->type == 1 ? 'selected' : '' }}>تصميم داخلي</option>
                                 <option value="2" {{ request()->type == 2 ? 'selected' : '' }}>تصميم معماري</option>
 
@@ -87,6 +89,8 @@
                             <!--begin::Input-->
                             <select name="status" data-placeholder="اختر حالة العمل .."
                                 class="form-select form-select-solid fw-bolder">
+                                <option value="">اختار حالة العمل</option>
+
                                 <option value="1" {{ request()->status == 1 ? 'selected' : '' }}>نشط</option>
                                 <option value="2" {{ request()->status == 2 ? 'selected' : '' }}>غير نشط</option>
 
@@ -191,9 +195,20 @@
                             </tbody>
                         </table>
                         <!--end::Table-->
+
+
+
+
+
+
+
                     @endif
                 </div>
                 <!--end::Table container-->
+
+                {{ $works->appends(request()->query())->links() }}
+
+
             </div>
 
         </div>
