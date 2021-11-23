@@ -1,6 +1,15 @@
 @extends('layouts.dashboard_layouts.app')
 
 @section('content')
+
+    <ol class="breadcrumb text-muted fs-6 fw-bold">
+        <li class="breadcrumb-item pe-3"><a href="{{ route('dashboard.welcome') }}" class="pe-3">الرئيسية</a></li>
+        <li class="breadcrumb-item pe-3"><a href="{{ route('dashboard.requirements.index') }}"
+                class="pe-3">المتطلبات</a>
+        </li>
+
+        <li class="px-3 breadcrumb-item text-muted">تعديل متطلب</li>
+    </ol><br>
     @include('dashboard.partials._errors')
 
     <div class="shadow-sm card">

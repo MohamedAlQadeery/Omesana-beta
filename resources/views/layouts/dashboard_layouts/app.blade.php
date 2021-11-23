@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html direction="rtl" dir="rtl" style="direction: rtl">
+<html direction="rtl" dir="rtl" style="direction: rtl" lang="ar">
 <!--begin::Head-->
 
 <head>

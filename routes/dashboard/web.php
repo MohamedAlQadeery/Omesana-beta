@@ -2,13 +2,14 @@
 
 use App\Http\Controllers\Dashboard\MediaController;
 use App\Http\Controllers\Dashboard\OptionController;
+use App\Http\Controllers\Dashboard\WelcomeController;
 use App\Http\Controllers\DropzoneController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('dashboard')->name('dashboard.')->middleware(['web', 'auth'])->group(function () {
     // //localiztion route
     // Route::get('/{lang?}', ['as' => 'lang', 'uses' => 'LangController@change']);
-    Route::view('', 'dashboard.dashboard');
+    Route::get('', [WelcomeController::class, 'index'])->name('welcome');
     Route::resource('requirements', RequirementController::class);
     Route::resource('works', WorkController::class);
     Route::delete('options/{option}', [OptionController::class, 'destroy'])->name('options.destroy');

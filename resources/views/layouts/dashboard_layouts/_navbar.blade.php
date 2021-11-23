@@ -4395,8 +4395,15 @@
                             <!--end::Menu item-->
                             <!--begin::Menu item-->
                             <div class="menu-item px-5">
-                                <a href="../../demo6/dist/authentication/flows/basic/sign-in.html"
-                                    class="menu-link px-5">Sign Out</a>
+                                <a class="menu-link px-5" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                              document.getElementById('logout-form').submit();">
+                                    تسجيل خروج
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                    class="d-none">
+                                    @csrf
+                                </form>
                             </div>
                             <!--end::Menu item-->
                             <!--begin::Menu separator-->

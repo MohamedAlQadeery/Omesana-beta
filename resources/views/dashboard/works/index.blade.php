@@ -9,7 +9,7 @@
 
 
     <ol class="breadcrumb text-muted fs-6 fw-bold">
-        <li class="breadcrumb-item pe-3"><a href="#" class="pe-3">الرئيسية</a></li>
+        <li class="breadcrumb-item pe-3"><a href="{{ route('dashboard.welcome') }}" class="pe-3">الرئيسية</a></li>
         <li class="px-3 breadcrumb-item text-muted">أعمال الموقع</li>
     </ol><br>
 
