@@ -98,7 +98,15 @@
                 </div>
 
 
-
+                <div class="py-2 menu-item">
+                    <a class="menu-link menu-center" href="{{ route('dashboard.settings.index') }}"
+                        data-bs-trigger="hover" data-bs-dismiss="click" data-bs-placement="right">
+                        <span class="menu-icon me-0">
+                            <i class="bi bi-house fs-2"></i>
+                        </span>
+                        <span class="menu-title">إعدادات الموقع</span>
+                    </a>
+                </div>
 
 
             </div>

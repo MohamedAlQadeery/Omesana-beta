@@ -16,4 +16,6 @@ Route::prefix('dashboard')->name('dashboard.')->middleware(['web', 'auth'])->gro
     Route::post('file-upload', [DropzoneController::class, 'upload'])->name('file_upload');
     Route::post('file-upload-multi/{folder}', [DropzoneController::class, 'uploadMultiple'])->name('file_upload_multi');
     Route::delete('delete-media/{media}', [MediaController::class, 'deleteMedia'])->name('media_delete');
+    Route::get('settings', 'SettingController@index')->name('settings.index');
+    Route::post('settings', 'SettingController@store')->name('settings.store');
 });

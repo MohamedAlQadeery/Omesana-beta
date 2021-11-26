@@ -19,11 +19,20 @@ class Work extends Model implements HasMedia
     use AccessorsTrait;
 
     protected $guarded = [];
-    protected $appends = ['status_name', 'type_name'];
+    protected $appends = ['status_name', 'type_name', 'lang_type'];
 
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('thumb')
         ->fit(Manipulations::FIT_FILL, 452, 559);
+    }
+
+    public function getLangTypeAttribute()
+    {
+        if ($this->type == 1) {
+            return app()->getLocale() == 'ar' ? 'تصميم داخلي' : 'Interior Desgin';
+        }
+
+        return app()->getLocale() == 'ar' ? 'تصميم معماري' : 'Architectural Design';
     }
 }

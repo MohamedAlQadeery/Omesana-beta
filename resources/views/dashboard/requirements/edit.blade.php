@@ -8,7 +8,7 @@
                 class="pe-3">المتطلبات</a>
         </li>
 
-        <li class="px-3 breadcrumb-item text-muted">انشاء متطلب</li>
+        <li class="px-3 breadcrumb-item text-muted">تعديل متطلب</li>
     </ol><br>
 
     @include('dashboard.partials._errors')

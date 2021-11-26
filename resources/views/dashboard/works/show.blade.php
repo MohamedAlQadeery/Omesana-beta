@@ -180,7 +180,7 @@
 
                                                 <!--begin::Overlay-->
                                                 <a class="d-block overlay" data-fslightbox="lightbox-basic"
-                                                    href="{{ $media->getUrl('thumb') }}">
+                                                    href="{{ $media->getUrl() }}">
                                                     <!--begin::Image-->
                                                     <div class="overlay-wrapper bgi-no-repeat bgi-position-center bgi-size-cover card-rounded min-h-175px"
                                                         style="background-image:url('{{ $media->getUrl() }}')">

@@ -45,6 +45,11 @@ return [
             'root' => public_path('images/tmp'),
             'visibility' => 'public',
         ],
+        'public_uploads' => [
+            'driver' => 'local',
+            'root' => public_path('images'),
+            'visibility' => 'public',
+        ],
 
         's3' => [
             'driver' => 's3',
