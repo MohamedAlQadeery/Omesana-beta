@@ -46,7 +46,7 @@
                             <!-- LAYER NR. 1 -->
                             <div class="tp-caption layers3" id="slide-100-layer-3" data-x="['right','right','right','right']"
                                 data-hoffset="['0','0','0','0']" data-y="['top','top','top','top']"
-                                data-voffset="['0','50','40','35']" data-fontsize="['14','14','14','12']"
+                                data-voffset="['0','50','40','35']" data-fontsize="['32','14','14','12']"
                                 data-lineheight="['200','45','35','24']" data-width="['1000','1000','600','280']"
                                 data-height="none" data-whitespace="normal" data-type="text" data-basealign="slide"
                                 data-responsive_offset="off" data-responsive="off"
@@ -142,7 +142,7 @@
                             <div class="tp-caption layers3" id="slide-100-layer-3"
                                 data-x="['right','right','right','right']" data-hoffset="['0','0','0','0']"
                                 data-y="['top','top','top','top']" data-voffset="['0','50','40','35']"
-                                data-fontsize="['14','14','14','12']" data-lineheight="['200','45','35','24']"
+                                data-fontsize="['32','14','14','12']" data-lineheight="['200','45','35','24']"
                                 data-width="['1000','1000','600','280']" data-height="none" data-whitespace="normal"
                                 data-type="text" data-basealign="slide" data-responsive_offset="off" data-responsive="off"
                                 data-frames='[{"from":"y:50px;opacity:0;","speed":1500,"to":"o:1;","delay":500,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
@@ -368,7 +368,8 @@
                                     <div class="overlay-bx">
                                         <div class="portinner">
                                             <h3 class="port-title"><a
-                                                    href="project-detail-1.html">{{ $work->name }}</a></h3>
+                                                    href="{{ route('site.work.show', $work->slug) }}">{{ $work->name }}</a>
+                                            </h3>
                                             <span class="text-primary"
                                                 style="letter-spacing: {{ LaravelLocalization::getCurrentLocale() == 'ar' ? '0px;' : '5px;' }}">{{ $work->lang_type }}</span>
                                         </div>
@@ -378,8 +379,15 @@
 
                         @endforeach
                     </ul>
+
+                </div><br>
+                <div class="text-center">
+                    <a href="{{ route('site.work.index') }}"
+                        class="btn btn-bg radius-xl">{{ __('site.click_more') }}</a>
+
                 </div>
             </div>
+
         </div>
         <!-- Latest Project End -->
         <!-- Our Partners -->
@@ -586,6 +594,11 @@
                         </div>
                     </div>
                 </div>
+
+            </div><br>
+            <div class="text-center">
+                <button class="btn btn-bg radius-xl">{{ __('site.click_more') }}</button>
+
             </div>
         </div>
         <!-- Blog End -->

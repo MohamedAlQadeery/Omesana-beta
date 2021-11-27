@@ -18,6 +18,7 @@ class CreateWorksTable extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->text('description')->nullable();
+            $table->tinyText('small_description')->nullable();
             $table->string('client_name')->nullable();
             $table->string('arc_name')->nullable();
             $table->string('address');

@@ -110,6 +110,14 @@
                     </div>
 
 
+                    <div class="col-md-12 fv-row">
+
+                        <label class="mb-2 required fs-6 fw-bold"><strong>وصف قصير</strong></label>
+
+                        <textarea class="form-control form-control-solid" data-kt-autosize="true"
+                            name="small_description">{{ old('small_description') }}</textarea>
+
+                    </div>
 
                     <div class="col-md-12 fv-row">
 

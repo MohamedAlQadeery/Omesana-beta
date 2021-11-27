@@ -6,9 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\WorkRequest;
 use App\Models\Work;
 use App\Traits\FileUploadTrait;
+use Cviebrock\EloquentSluggable\Services\SlugService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
 
 class WorkController extends Controller
 {
@@ -47,12 +47,13 @@ class WorkController extends Controller
     public function store(WorkRequest $request)
     {
         $data = $request->except(['files', '_token']);
-        $data['slug'] = Str::of($data['name'])->slug('-');
+        $data['slug'] = SlugService::createSlug(Work::class, 'slug', $data['name'], ['unique' => true]);
+
         $work = Work::create($data);
 
         $files = Storage::disk('tmp')->allFiles($work->tmp_folder);
         foreach ($files as $file) {
-            $this->fileUpload($work, $file, 'work');
+            $this->fileUpload($work, $file);
         }
 
         return redirect()->route('dashboard.works.index')->with('success', 'success');
@@ -74,7 +75,7 @@ class WorkController extends Controller
         if ($request->input('files')[0] != null) {
             $files = Storage::disk('tmp')->allFiles($work->tmp_folder);
             foreach ($files as $file) {
-                $this->fileUpload($work, $file, 'work');
+                $this->fileUpload($work, $file);
             }
         }
         $work->update($data);

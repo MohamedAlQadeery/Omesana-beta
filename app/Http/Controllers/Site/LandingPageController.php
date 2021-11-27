@@ -9,7 +9,7 @@ class LandingPageController extends Controller
 {
     public function index()
     {
-        $works = Work::latest()->limit(8)->get();
+        $works = Work::where('status', 1)->latest()->limit(8)->get();
 
         return view('site.landing')->with(['works' => $works]);
     }

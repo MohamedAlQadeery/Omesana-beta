@@ -24,7 +24,7 @@
         @include('layouts.site_layouts._header')
         <!-- header END -->
         <!-- Content -->
-        <div class="bg-white page-content">
+        <div class="bg-black page-content">
             @yield('content')
         </div>
         <!-- Content END-->

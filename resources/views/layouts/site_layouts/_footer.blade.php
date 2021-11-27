@@ -1,12 +1,12 @@
 <footer class="site-footer archi-footer">
 
     <div class="footer-top"
-        style="background-image: url(images/background/bg5.png); background-size: cover; background-position: 0 -150px;">
+        style="background-image: url({{ asset('site-assets') }}/images/background/bg5.png); background-size: cover; background-position: 0 -150px;">
         <div class="container">
             <div class="row">
                 <div class="col-xl-3 col-lg-12 d-flex">
                     <div class="footer-logo align-self-center">
-                        <img src="{{ asset('images/logo.png') }}" alt="">
+                        <img src="{{ asset('images/logo_300_82.png') }}" alt="">
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-4">

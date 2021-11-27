@@ -37,8 +37,7 @@
                     <div class="d-flex flex-row-fluid flex-column text-center p-10 pt-lg-20">
                         <!--begin::Logo-->
                         <a href="" class="py-9 mb-5">
-                            <img alt="Logo" src="{{ asset('admin-dashboard') }}/media/logos/logo-2.svg"
-                                class="h-60px" />
+                            <img alt="Logo" src="{{ asset('images/logo_98_67.png') }}" class="h-60px" />
                         </a>
                         <!--end::Logo-->
                         <!--begin::Title-->

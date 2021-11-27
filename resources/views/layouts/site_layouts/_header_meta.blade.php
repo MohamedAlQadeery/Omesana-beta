@@ -14,7 +14,7 @@
 <link rel="shortcut icon" type="image/x-icon" href="{{ asset('site-assets') }}/images/favicon.png" />
 
 <!-- PAGE TITLE HERE -->
-<title>Archia - Architecture & Interior HTML Template</title>
+<title>{{ setting('title_' . LaravelLocalization::getCurrentLocale()) }}</title>
 
 <!-- MOBILE SPECIFIC -->
 <meta name="viewport" content="width=device-width, initial-scale=1">

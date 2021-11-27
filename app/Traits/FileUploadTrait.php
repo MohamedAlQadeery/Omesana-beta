@@ -21,7 +21,7 @@ trait FileUploadTrait
         Storage::disk('tmp')->delete($file);
     }
 
-    public function fileUpload($model, $file, $disk)
+    public function fileUpload($model, $file)
     {
         $model_name = $model->getTable();
         $image_name = Str::of($file)->after('/'); // this is how it looks before work123123/image.jpg

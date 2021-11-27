@@ -32,4 +32,7 @@ return [
 'male_ceo' => 'Omesana Design Ceo',
 'phone' => 'Phone',
 'footer_body' => 'All rights reserved for Omesana Company',
+'click_more' => 'Click here for more',
+'works' => 'Works',
+'done_by' => 'Done by',
 ];
