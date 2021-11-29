@@ -56,3 +56,5 @@
     .link_style {}
 
 </style>
+
+@stack('css')

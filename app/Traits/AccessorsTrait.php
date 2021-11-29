@@ -17,4 +17,15 @@ trait AccessorsTrait
     {
         return $this->type == 1 ? 'تصميم داخلي' : 'تصميم معماري';
     }
+
+    public function getContactTypeAttribute()
+    {
+        if ($this->type == 1) {
+            return 'استفسار';
+        } elseif ($this->type == 2) {
+            return 'اقتراح';
+        }
+
+        return 'أخرى';
+    }
 }

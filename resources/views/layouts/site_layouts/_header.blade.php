@@ -33,6 +33,9 @@
 
 
                                         @endforeach
+                                        <li><a
+                                                href="{{ route('site.contactus') }}">{{ __('site.contact_us_header') }}</a>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="contact-no"><span>{{ setting('mobile_number') }}+</span></li>

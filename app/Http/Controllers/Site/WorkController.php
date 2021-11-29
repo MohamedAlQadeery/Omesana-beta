@@ -46,6 +46,7 @@ class WorkController extends Controller
     public function show($slug)
     {
         $work = Work::findBySlugOrFail($slug);
+        $work->increment('view_count');
 
         return view('site.works.show')->with(['work' => $work]);
     }

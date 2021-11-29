@@ -30,7 +30,7 @@
  <script src="{{ asset('site-assets') }}/js/dz.carousel.js"></script>
  <!-- SORTCODE FUCTIONS -->
  <script src="{{ asset('site-assets') }}/plugins/tilt/tilt.jquery.js"></script>
- <script src="{{ asset('site-assets') }}/js/dz.ajax.js"></script>
+ {{-- <script src="{{ asset('site-assets') }}/js/dz.ajax.js"></script> --}}
  <!-- CONTACT JS  -->
  <script src="{{ asset('site-assets') }}/plugins/loading/anime.js"></script>
  <!-- LOADING JS -->
@@ -79,3 +79,9 @@
          dz_rev_slider_4();
      }); /*ready*/
  </script>
+
+
+ <!-- Go to www.addthis.com/dashboard to customize your tools -->
+ <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-61a37164a1ec8645"></script>
+
+ @stack('js')

@@ -64,8 +64,9 @@
                                         <ul class="d-flex align-items-center">
                                             <li class="post-date"> {{ $work->created_at->year }} </li>
 
-                                            <li class="post-comment"><i class="ti ti-comments"></i> <a
-                                                    href="javascript:void(0);">9</a> </li>
+                                            <li class="post-comment"><i class="ti ti-eye"
+                                                    style="margin-top: 3px;"></i> <a
+                                                    href="javascript:void(0);">{{ $work->view_count }}</a> </li>
                                         </ul>
                                     </div>
                                     <div class="dlab-post-title">
@@ -77,7 +78,8 @@
                                         <p>{{ $work->small_description }}</p>
                                     </div>
                                     <div class="dlab-post-name">
-                                        {{ __('site.type') }} <a href="javascript:void(0);"
+                                        {{ __('site.type') }} <a
+                                            href="{{ route('site.work.index', ['type' => $work->type]) }}"
                                             class="site-button-link">{{ $work->lang_type }}</a>
                                     </div>
                                 </div>

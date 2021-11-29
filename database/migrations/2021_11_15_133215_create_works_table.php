@@ -26,6 +26,7 @@ class CreateWorksTable extends Migration
             $table->smallInteger('type')->nullable(); // 1 interior 2 external
             $table->string('tmp_folder');
             $table->smallInteger('status')->default(1); //1 active 2 disabled
+            $table->smallInteger('view_count')->default(0);
             $table->timestamps();
         });
     }

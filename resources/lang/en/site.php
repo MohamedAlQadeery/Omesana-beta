@@ -35,4 +35,13 @@ return [
 'click_more' => 'Click here for more',
 'works' => 'Works',
 'done_by' => 'Done by',
+'contact_us_header' => 'Contact us',
+'contact_us_body' => 'For Questions and Inquires',
+'name' => 'Name',
+'send' => 'Send',
+'message_body' => 'Message content',
+'inquiry' => 'Inquiry',
+'suggestion' => 'Suggestion',
+'other' => 'Other',
+'address' => 'Address',
 ];

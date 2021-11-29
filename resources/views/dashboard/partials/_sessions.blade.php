@@ -46,3 +46,21 @@
         });
     </script>
 @endif
+
+
+@if (session('contact_success'))
+    <script>
+        Swal.fire({
+            title: {{ LaravelLocalization::getCurrentLocale() == 'ar' ? 'تم ارسال الرسالة بنجاح !' : 'Message Sent successfully!' }},
+            text: {{ LaravelLocalization::getCurrentLocale() == 'ar' ? 'ستصلك رسالة في بريدك الالكتروني خلال 24 ساعة نشكرك على تواصلك معنا' : 'You will receive a message in your email in 24 hours thanks for your support' }},
+            icon: "success",
+            button: "حسنا !!",
+        });
+    </script>
+
+    <div class="alert alert-success">
+        {{ LaravelLocalization::getCurrentLocale() == 'ar' ? 'تم ارسال الرسالة بنجاح !' : 'Message Sent successfully!' }},
+        {{ LaravelLocalization::getCurrentLocale() == 'ar' ? 'ستصلك رسالة في بريدك الالكتروني خلال 24 ساعة نشكرك على تواصلك معنا' : 'You will receive a message in your email in 24 hours thanks for your support' }},
+
+    </div>
+@endif

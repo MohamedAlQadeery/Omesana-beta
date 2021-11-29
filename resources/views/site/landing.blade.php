@@ -85,12 +85,12 @@
                                 {{ __('site.slider_welcome') }}
                             </div>
                             <!-- LAYER NR. 5 -->
-                            <a class="tp-caption tp-resizeme" href="carousel-showcase.html" target="_blank"
-                                id="slide-100-layer-6" data-x="['right','right','right','right']"
-                                data-hoffset="['0','0','0','0']" data-y="['top','top','top','top']"
-                                data-voffset="['230','180','180','180']" data-width="none" data-height="none"
-                                data-whitespace="['nowrap','nowrap','nowrap','nowrap']" data-type="button" data-actions=''
-                                data-basealign="slide" data-responsive_offset="off" data-responsive="off"
+                            <a class="tp-caption tp-resizeme" href="{{ route('site.work.index') }}" id="slide-100-layer-6"
+                                data-x="['right','right','right','right']" data-hoffset="['0','0','0','0']"
+                                data-y="['top','top','top','top']" data-voffset="['230','180','180','180']"
+                                data-width="none" data-height="none" data-whitespace="['nowrap','nowrap','nowrap','nowrap']"
+                                data-type="button" data-actions='' data-basealign="slide" data-responsive_offset="off"
+                                data-responsive="off"
                                 data-frames='[{"delay":"+690","speed":2000,"frame":"0","from":"y:50px;opacity:0;fb:20px;","to":"o:1;fb:0;","ease":"Power4.easeOut"},{"delay":"wait","speed":300,"frame":"999","to":"opacity:0;fb:0;","ease":"Power3.easeInOut"},{"frame":"hover","speed":"0","ease":"Linear.easeNone","to":"o:1;rX:0;rY:0;rZ:0;z:0;fb:0;","style":"c:rgba(0, 0, 0, 1.00);bg:rgba(255, 255, 255, 1.00);"}]'
                                 data-margintop="[0,0,0,0]" data-marginright="[0,0,0,0]" data-marginbottom="[0,0,0,0]"
                                 data-marginleft="[0,0,0,0]" data-textAlign="['inherit','inherit','inherit','inherit']"
@@ -180,7 +180,7 @@
                                 {{ __('site.slider_welcome') }}
                             </div>
                             <!-- LAYER NR. 5 -->
-                            <a class="tp-caption tp-resizeme" href="carousel-showcase.html" target="_blank"
+                            <a class="tp-caption tp-resizeme" href="{{ route('site.work.index') }}"
                                 id="slide-100-layer-6" data-x="['right','right','right','right']"
                                 data-hoffset="['0','0','0','0']" data-y="['top','top','top','top']"
                                 data-voffset="['230','180','180','180']" data-width="none" data-height="none"
