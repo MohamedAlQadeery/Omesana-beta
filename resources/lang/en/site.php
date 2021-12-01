@@ -44,4 +44,5 @@ return [
 'suggestion' => 'Suggestion',
 'other' => 'Other',
 'address' => 'Address',
+'title' => 'Title',
 ];

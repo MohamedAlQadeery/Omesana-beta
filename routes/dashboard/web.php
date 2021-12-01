@@ -18,4 +18,6 @@ Route::prefix('dashboard')->name('dashboard.')->middleware(['web', 'auth'])->gro
     Route::delete('delete-media/{media}', [MediaController::class, 'deleteMedia'])->name('media_delete');
     Route::get('settings', 'SettingController@index')->name('settings.index');
     Route::post('settings', 'SettingController@store')->name('settings.store');
+    Route::resource('contactus', 'ContactusController');
+    Route::post('contactus/{id}', 'ContactusController@replay')->name('contactus.replay');
 });

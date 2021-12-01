@@ -29,6 +29,7 @@ class ContactusRequest extends FormRequest
             'phone' => 'required|numeric',
             'body' => 'required',
             'type' => 'required',
+            'title' => 'required',
         ];
     }
 }

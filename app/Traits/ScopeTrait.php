@@ -34,4 +34,19 @@ trait ScopeTrait
             return $q->where('address', $address);
         });
     }
+
+    public function scopeWhenEmail($query, $email)
+    {
+        return $query->when($email, function ($q) use ($email) {
+            return $q->where('email', 'like', "%$email%");
+        });
+    }
+
+    //1 new 2 old
+    public function scopeWhenIsRead($query, $is_read)
+    {
+        return $query->when($is_read, function ($q) use ($is_read) {
+            return $q->where('is_read', $is_read);
+        });
+    }
 }

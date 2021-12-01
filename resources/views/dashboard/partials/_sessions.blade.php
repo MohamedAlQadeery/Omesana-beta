@@ -64,3 +64,15 @@
 
     </div>
 @endif
+
+
+@if (session('success_reply'))
+    <script>
+        Swal.fire({
+            title: "تم الرد على الرسالة بنجاح !",
+            text: "سيستلم المرسل الرد في بريده الالكتروني خلال 24 ساعة",
+            icon: "success",
+            button: "حسنا !!",
+        });
+    </script>
+@endif

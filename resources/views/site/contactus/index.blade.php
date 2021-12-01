@@ -202,6 +202,16 @@
 
                         <div class="col-lg-12 col-md-12 col-sm-12">
                             <div class="form-group">
+                                <input name="title" type="text" required class="form-control"
+                                    placeholder="{{ __('site.title') }}">
+                                @error('title') <span
+                                    class="text-danger"><strong>{{ $message }}</strong></span>@enderror
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12">
+                            <div class="form-group">
                                 <textarea name="body" rows="4" class="form-control" required
                                     placeholder="{{ __('site.message_body') }}"></textarea>
                                 @error('body') <span

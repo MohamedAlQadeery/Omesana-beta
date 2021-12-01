@@ -28,4 +28,9 @@ trait AccessorsTrait
 
         return 'أخرى';
     }
+
+    public function getReadTypeAttribute()
+    {
+        return $this->is_read == 1 ? 'جديدة' : 'تم قرائتها';
+    }
 }

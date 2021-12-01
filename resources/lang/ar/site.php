@@ -51,4 +51,5 @@ return [
 'inquiry' => 'استفسار',
 'suggestion' => 'اقتراح',
 'other' => 'أخرى',
+'title' => 'العنوان',
 ];
