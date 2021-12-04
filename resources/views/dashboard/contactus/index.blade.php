@@ -162,7 +162,7 @@
 
                                         <td>
                                             <span
-                                                class="btn btn-light-{{ $message->is_read == 1 ? 'success' : 'warning' }} btn-sm">{{ $message->read_type }}</span>
+                                                class="btn btn-light-{{ $message->is_read == 1 ? 'success' : 'danger' }} btn-sm">{{ $message->read_type }}</span>
 
                                         </td>
 

@@ -20,7 +20,7 @@ class CreateContactusesTable extends Migration
             $table->string('email');
             $table->string('phone');
             $table->text('body');
-            $table->smallInteger('is_read')->default(1);
+            $table->smallInteger('is_read')->default(1); //1 new 2 old
             $table->smallInteger('type'); // 1 inquiry , 2 suggestion , 3 other
             $table->timestamps();
         });

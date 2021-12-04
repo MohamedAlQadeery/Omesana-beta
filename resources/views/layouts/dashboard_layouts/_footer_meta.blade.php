@@ -1,7 +1,8 @@
-<script>
-    var hostUrl = "";
-</script>
 <!--begin::Javascript-->
+<script>
+    const adminId = '{{ auth()->user()->id }}';
+</script>
+
 <!--begin::Global Javascript Bundle(used by all pages)-->
 <script src="{{ asset('admin-dashboard') }}/plugins/global/plugins.bundle.js"></script>
 <script src="{{ asset('admin-dashboard') }}/js/scripts.bundle.js"></script>
@@ -10,10 +11,8 @@
 <script src="{{ asset('admin-dashboard') }}/plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
 <!--end::Page Vendors Javascript-->
 <!--begin::Page Custom Javascript(used by this page)-->
-<script src="{{ asset('admin-dashboard') }}/js/custom/widgets.js"></script>
-<script src="{{ asset('admin-dashboard') }}/js/custom/apps/chat/chat.js"></script>
-<script src="{{ asset('admin-dashboard') }}/js/custom/modals/create-app.js"></script>
-<script src="{{ asset('admin-dashboard') }}/js/custom/modals/upgrade-plan.js"></script>
+<script src="{{ asset('js/app.js') }}"></script>
+
 
 <script>
     $(document).ready(function() {
@@ -50,4 +49,6 @@
 
     });
 </script>
+
+
 @stack('js')
