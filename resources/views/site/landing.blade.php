@@ -299,7 +299,7 @@
         <!-- About Us -->
         <div class="bg-white section-full content-inner-1">
             <div class="text-center section-head">
-                <h2 class="head-title m-b10">{{ __('site.services') }}</h2>
+                <h2 class="head-title m-b10" id="services">{{ __('site.services') }}</h2>
 
             </div>
             <div class="container">

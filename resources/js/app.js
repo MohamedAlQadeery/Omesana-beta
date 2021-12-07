@@ -79,4 +79,5 @@ window.Echo.private('admin.' + adminId)
 
         $('#unread').addClass('pulse-ring w-45px h-45px');
 
+
     });
