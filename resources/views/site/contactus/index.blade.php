@@ -53,6 +53,7 @@
         }
 
     </style>
+
 @endpush
 
 @section('content')
@@ -314,5 +315,7 @@
     <!-- Google API For Recaptcha  -->
     <script src='https://www.google.com/recaptcha/api.js'></script>
     <!-- END Google API For Recaptcha  -->
+
+
 
 @endpush

@@ -5,7 +5,7 @@
     <!--begin::Brand-->
     <div class="py-8 aside-logo" id="kt_aside_logo">
         <!--begin::Logo-->
-        <a href="../../demo6/dist/index.html" class="d-flex align-items-center">
+        <a href="{{ route('dashboard.welcome') }}" class="d-flex align-items-center">
             <img alt="Logo" src="{{ asset('admin-dashboard') }}/media/logos/logo-demo6.svg" class="h-45px logo" />
         </a>
         <!--end::Logo-->

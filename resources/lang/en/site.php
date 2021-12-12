@@ -45,4 +45,8 @@ return [
 'other' => 'Other',
 'address' => 'Address',
 'title' => 'Title',
+'error_page' => 'Error page',
+'error_message_404' => 'The Link You Folowed Probably Broken, or the page has been removed!',
+'error_message_403' => 'an error has occurred',
+'back_to_home' => 'Return To Home',
 ];

@@ -7,7 +7,7 @@
                     <!-- website logo -->
                     <div class="logo-header">
                         {{-- <a href="index.html"><img src="{{ asset('site-assets') }}/images/logo-white.png" alt="" /></a> --}}
-                        <a href="{{ route('site.landing') }}"><img src="{{ asset('images/logo_300_82.png') }}"
+                        <a href="{{ route('site.landing') }}"><img src="{{ asset('images/logo_300_120.png') }}"
                                 alt="logo" /></a>
 
                     </div>

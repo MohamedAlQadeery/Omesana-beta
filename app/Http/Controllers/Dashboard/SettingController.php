@@ -20,9 +20,9 @@ class SettingController extends Controller
         if ($request->logo) {
             $this->remove_previous($request->logo);
             Image::make($request->logo)
-            ->resize(300, 82)
+            ->resize(300, 120)
             ->encode('png')
-            ->save(public_path('images/').'logo_300_82.png');
+            ->save(public_path('images/').'logo_300_120.png');
 
             Image::make($request->logo)
             ->resize(98, 67)

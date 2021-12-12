@@ -6,7 +6,7 @@
             <div class="row">
                 <div class="col-xl-3 col-lg-12 d-flex">
                     <div class="footer-logo align-self-center">
-                        <img src="{{ asset('images/logo_300_82.png') }}" alt="">
+                        <img src="{{ asset('images/logo_300_120.png') }}" alt="">
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-4">
@@ -14,7 +14,8 @@
                         <h6 class="title text-primary text-uppercase"
                             style="letter-spacing: {{ LaravelLocalization::getCurrentLocale() == 'ar' ? '0px' : '3px' }}">
                             {{ __('site.call_us') }}</h6>
-                        <p><span class="font-weight-600">Phone: +</span>{{ setting('mobile_number') }}</p>
+                        <p><span class="font-weight-600">{{ __('site.phone') }}:
+                            </span>{{ setting('mobile_number') }}</p>
                     </div>
                 </div>
                 <div class="col-xl-3 col-lg-4 col-md-4">

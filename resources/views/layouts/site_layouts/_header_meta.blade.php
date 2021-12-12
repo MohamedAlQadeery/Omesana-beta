@@ -10,8 +10,8 @@
 <meta name="format-detection" content="telephone=no">
 
 <!-- FAVICONS ICON -->
-<link rel="icon" href="{{ asset('site-assets') }}/images/favicon.ico" type="image/x-icon" />
-<link rel="shortcut icon" type="image/x-icon" href="{{ asset('site-assets') }}/images/favicon.png" />
+<link rel="icon" href="{{ asset('images/logo_98_67.png') }}" type="image/x-icon" />
+<link rel="shortcut icon" type="image/x-icon" href="{{ asset('images/logo_98_67.png') }}" />
 
 <!-- PAGE TITLE HERE -->
 <title>{{ setting('title_' . LaravelLocalization::getCurrentLocale()) }}</title>

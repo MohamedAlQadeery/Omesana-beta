@@ -39,7 +39,7 @@
                             <!--begin::Stats-->
                             <div class="px-3 py-3 mb-3 border border-gray-300 border-dashed rounded">
                                 <div class="text-gray-700 fs-4 fw-bolder">
-                                    <span class="w-75px">6,900</span>
+                                    <span class="w-75px">{{ $work->view_count }}</span>
                                     <!--begin::Svg Icon | path: icons/duotune/arrows/arr066.svg-->
                                     <span class="svg-icon svg-icon-3 svg-icon-success">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
