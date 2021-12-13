@@ -20,4 +20,5 @@ Route::prefix('dashboard')->name('dashboard.')->middleware(['web', 'auth'])->gro
     Route::post('settings', 'SettingController@store')->name('settings.store');
     Route::resource('contactus', 'ContactusController');
     Route::post('contactus/{id}', 'ContactusController@replay')->name('contactus.replay');
+    Route::get('removetmp', 'MediaController@remove_tmp')->name('remove_tmp');
 });
