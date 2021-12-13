@@ -29,6 +29,6 @@ class MediaController extends Controller
             }
         }
 
-        dd($current_tmp_folder, $all_tmp_folders_db, $current_tmp_folder);
+        dd('Unused folders are removed succesfully');
     }
 }
