@@ -3,10 +3,10 @@
 <meta name="keywords" content="" />
 <meta name="author" content="" />
 <meta name="robots" content="" />
-<meta name="description" content="Archia - Architecture & Interior HTML Template" />
-<meta property="og:title" content="Archia - Architecture & Interior HTML Template" />
-<meta property="og:description" content="Archia - Architecture & Interior HTML Template" />
-<meta property="og:image" content="http://archia.dexignzone.com/xhtml/social-image.png" />
+<meta name="description" content="Omesana Design - Architecture & Interior Design Comapny " />
+<meta property="og:title" content="Omesana Design" />
+<meta property="og:description" content="Omesana Design - Architecture & Interior Design Comapny" />
+<meta property="og:image" content="{{ asset('images/logo_300_120.png') }}" />
 <meta name="format-detection" content="telephone=no">
 
 <!-- FAVICONS ICON -->
