@@ -32,7 +32,7 @@
                         <h6 class="title text-primary text-uppercase"
                             style="letter-spacing: {{ LaravelLocalization::getCurrentLocale() == 'ar' ? '0px' : '3px' }}">
                             {{ __('site.our_address') }}</h6>
-                        <p>{{ setting('address') }}</p>
+                        <p>{{ setting('address_' . LaravelLocalization::getCurrentLocale()) }}</p>
                     </div>
                 </div>
             </div>

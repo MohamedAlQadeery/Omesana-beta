@@ -375,16 +375,30 @@
                                 <!--begin::Col-->
                                 <div class="col-md-6 fv-row">
                                     <!--begin::Label-->
-                                    <label class="mb-2 required fs-6 fw-bold"><strong>موقع الشركة</strong></label>
+                                    <label class="mb-2 required fs-6 fw-bold"><strong>موقع الشركة باللغة
+                                            العربية</strong></label>
                                     <!--end::Label-->
                                     <!--begin::Input-->
                                     <input class="form-control form-control-solid" type="text"
-                                        value="{{ setting('address') }}" name="address" />
+                                        value="{{ setting('address_ar') }}" name="address_ar" />
                                     <!--end::Input-->
                                 </div>
                                 <!--end::Col-->
 
 
+
+                                <!--begin::Col-->
+                                <div class="col-md-6 fv-row">
+                                    <!--begin::Label-->
+                                    <label class="mb-2 required fs-6 fw-bold"><strong>موقع الشركة باللغة
+                                            الانجليزية</strong></label>
+                                    <!--end::Label-->
+                                    <!--begin::Input-->
+                                    <input class="form-control form-control-solid" type="text"
+                                        value="{{ setting('address_en') }}" name="address_en" />
+                                    <!--end::Input-->
+                                </div>
+                                <!--end::Col-->
 
 
 
